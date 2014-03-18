@@ -1,0 +1,16 @@
+{
+  "name": "retro",
+  "version": "0.0.0",
+  "description": "Terminal-base UI toolkit.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Toby Ho",
+  "license": "MIT",
+  "dependencies": {
+    "charm": "~0.2.0",
+    "is-type": "0.0.1",
+    "npmlog": "0.0.6"
+  }
+}
