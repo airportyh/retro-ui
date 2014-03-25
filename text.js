@@ -11,8 +11,11 @@ function Text(text){
 
 Text.prototype = {
   render: function(screen){
-    screen.position(1, 1)
-    screen.write(this.text)
+    for (var i = 0; i < this.lines.length; i++){
+      var line = this.lines[i]
+      screen.position(1, 1 + i)
+      screen.write(line)
+    }
   }
 }
 

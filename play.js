@@ -5,7 +5,7 @@ charm.reset()
 var Text = require('./text')
 var Border = require('./border')
 
-var text = new Text('Hello, world')
+var text = new Text('Hello, \nworld!')
 var border = new Border(text)
 
 border.render(charm)
