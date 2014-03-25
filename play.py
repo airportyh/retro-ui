@@ -2,29 +2,21 @@ from Tkinter import *
 
 root = Tk()
 frame = Frame(root)
-master = frame
 
-label1 = Label(master, text="First")
-label2 = Label(master, text="Second")
+top = Label(frame, text='I am the top')
+top.grid(row=0, column=1)
 
-entry1 = Entry(master)
-entry2 = Entry(master)
+center = Label(frame, text='I am the center\nBlah balh', width=40)
+center.grid(row=1, column=1)
 
-label1.grid(sticky=E)
-label2.grid(sticky=E)
+bottom = Label(frame, text='I am the bottom')
+bottom.grid(row=2, column=1)
 
-entry1.grid(row=0, column=1)
-entry2.grid(row=1, column=1)
+left = Label(frame, text='Left\nThen\nLeft\nAgain')
+left.grid(row=0, column=0, rowspan=3, sticky=S+N)
 
-label3 = Label(master, text='HEY THIS IS BIG')
-label3.grid(row=0, column=2, columnspan=2, rowspan=2,
-               sticky=W+E+N+S, padx=5, pady=5)
-
-button1 = Button(master, text='Zoom in')
-button2 = Button(master, text='Zoom out')
-
-button1.grid(row=2, column=2)
-button2.grid(row=2, column=3)
+right = Label(frame, text='Right\nThen\nRight\nAgain')
+right.grid(row=0, column=2, rowspan=3, sticky=S+N)
 
 frame.pack()
 frame.mainloop()
