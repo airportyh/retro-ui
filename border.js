@@ -3,12 +3,15 @@ module.exports = Border
 var assert = require('assert')
 var Canvas = require('./canvas')
 
-function Border(child){
+function Border(child, options){
+  options = options || {}
   this.child = child
   assert(child.width)
   assert(child.height)
-  this.width = child.width + 2
-  this.height = child.height + 2
+  this.xpadding = options.xpadding || 0
+  this.ypadding = options.ypadding || 0
+  this.width = child.width + (2 * this.xpadding) + 2
+  this.height = child.height + (2 * this.ypadding) + 2
 }
 
 Border.prototype = {
@@ -26,8 +29,8 @@ Border.prototype = {
     canvas.write(Array(this.width + 1).join('*'))
     
     var childCanvas = new Canvas(canvas, {
-      col: 1,
-      row: 1
+      col: 1 + this.xpadding,
+      row: 1 + this.ypadding
     })
 
     this.child.render(childCanvas)

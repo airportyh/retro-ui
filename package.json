@@ -18,6 +18,7 @@
   "homepage": "https://github.com/airportyh/retro-ui",
   "dependencies": {
     "charm": "~0.2.0",
-    "is-type": "0.0.1"
+    "is-type": "0.0.1",
+    "blessed": "0.0.29"
   }
 }
